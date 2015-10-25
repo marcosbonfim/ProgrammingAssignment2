@@ -1,7 +1,8 @@
 ## Marcos Bonfim - Oct-25-2015
 
-## Create a list of functions to be use by cascheSolve
-
+## This function creates a list of functions to be use by cascheSolve
+## The variable inverso is set to NULL at first and once the Inverse matrix is
+## calculated once, this variable is used to store the result
 
 makeCacheMatrix <- function(x = matrix()) {
         inverso <- NULL
@@ -17,7 +18,10 @@ makeCacheMatrix <- function(x = matrix()) {
              getinv = getinv)
 }
 
-## Calculates de inverse and cache it for the future
+## This function uses the functions defined above to calculate the inverse of a matrix
+## It first tests if the variable Inverso has a value, if so, just get it back and avoid 
+## the recalculation
+
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         inverso <- x$getinv()
